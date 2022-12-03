@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2? family= Bona+Nova & family= Roboto:wght@300 & display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(to right top, #fb9ed3, #e99fdd, #d4a2e5, #bea4ea, #a6a6eb, #92acee, #7eb1ee, #6cb6ea, #60bfe7, #5ec7e1, #67ced8, #77d4ce);
+}
+
+.container{
+    width: 87%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    grid-gap: 3rem;
+    height: 41px;
+
+}
+
+.Sub{
+    text-decoration: none;
+
+}
+
+.A{
+    margin: 0 5px;
+    text-decoration: none;
+    padding: 0.3rem 1.3rem;
+    font-size: 15px;
+    font-weight: bold;
+    color: #494234;
+    content: "";
+    height: 8%;
+    width: 8%;
+    position: relative;
+    top: 0;
+    left: 390px;
+    border-radius: 20px;
+    background-color: #ffd9bb;
+    position: relative; top:-120px;
+
+}
+
+.Title2{
+    position: relative; left:1100px;
+    position: relative; top:-30px;
+    text-align: left; 
+font-family: Arial Black; 
+font-weight: bold; 
+font-size: 30px; 
+color: rgb(241, 222, 204); 
+text-shadow: 0 1px 0 rgb(88, 140, 165), 0 2px 0 rgb(230, 227, 227), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+}
+
+.imagen2{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: relative;left:1200px;
+    border: 3px solid rgb(99, 177, 197);
+    position: relative; top:-80px;
+}
