@@ -99,7 +99,7 @@ function rootReducer(state= initialState, action){
 
             case 'POST_DOG':
             return{
-                ...state
+                ...state,
             }
     }
 };

@@ -21,9 +21,11 @@ export default function Detail(props){
                     <h2 className="detalle" >DETALLES</h2>
                     <img src={myDog[0].image} alt='' className="Dog-img"/>
                     <h3 className="Details">Nombre: {myDog[0].name}</h3>
-                    <h3 className="Details">Temperamento:{myDog[0].temperament}</h3>
-                    <h3 className="Details">Peso:{myDog[0].weight}</h3>
-                    <h3 className="Details">Altura:{myDog[0].height}</h3>
+                    <h3 className="Details">Temperamentos:
+                    {myDog[0].createdInDb? myDog[0].temperaments.map(el => el.name ).join(', '): myDog[0].temperament.split(', ').map(e => e ).join(', ')}
+                    </h3>
+                    <h3 className="Details">Peso:{!myDog[0].createdInDb? myDog[0].weight : myDog[0].weightMin + ' - ' + myDog[0].weightMax}</h3>
+                    <h3 className="Details">Altura: {!myDog[0].createdInDb? myDog[0].height : myDog[0].heightMin + ' - ' + myDog[0].heightMax}</h3>
                     <h3 className="Details">Años de vida: {myDog[0].life_span}</h3>
                 
                 </div>: <p className="loading">Espere...</p>

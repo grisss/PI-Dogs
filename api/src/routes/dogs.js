@@ -3,29 +3,40 @@ const getAllDogs= require('../controllers/index')
 const {Dog, Temperament}= require("../db");
 
 const router= Router()
-router.get('/', async (req, res) => {
+router.get('/', async (req, res,next) => {
     const name = req.query.name 
+    try{
     let dogsTotal = await getAllDogs();
     if(name){                              
     let dogsName = await dogsTotal.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
     dogsName.length ?
     res.status(200).send(dogsName) :
-    res.status(404).send('dog not found ')
+    res.status(404).send('Usuario no encontrado')
     } else { 
         res.status(200).send(dogsTotal)
+    
+    }}catch(error){
+        next(error)
     }
 });
 
-router.get('/:id', async (req, res) => {
-    const { id } = req.params;
+
+
+router.get('/:id', async (req, res,next) => {
+    const { id } = req.params;4
+    try{
     const dogsTotal = await getAllDogs()
     if (id) {
         let dogId = await dogsTotal.filter(el => el.id == id) 
         dogId.length?
         res.status(200).json(dogId):
-        res.status(404).send('That id was not found ')
+        res.status(404).send(' La identificacion no fue encontrada ')
     }
+}catch(error){
+    next(error)
+}
 })
+
 
 router.post('/', async (req, res) => {
     let {
@@ -40,7 +51,7 @@ router.post('/', async (req, res) => {
         temperament 
         } = req.body;
 
-    let dogCreated = await Dog.create ({
+    let dogCreated = await Dog.create ({ 
         name, 
         image, 
         heightMin,
@@ -54,8 +65,9 @@ router.post('/', async (req, res) => {
         where : {name : temperament}                
     })
     dogCreated.addTemperament(temperamentDb) 
-    res.send('Dog created ')
+    res.send('Usuario Creado!')
 });
+
 
 
 module.exports = router;

@@ -6,9 +6,11 @@ export function getDogs(){
         return dispatch({
             type: 'GET_DOGS',
             payload: json.data
-        })
+        }
+        )
     }
 }
+
 
 export function filterCreated(payload){
     return {
@@ -79,7 +81,7 @@ export function filterTemperament(){
 
 export function postDog(payload){
     return async function(){
-        const apiInfo= await axios.post('http://localhost:3001/dogs',payload);
+        const apiInfo= await axios.post(`http://localhost:3001/dogs`,payload);
         return apiInfo
     }
 }
